@@ -1,6 +1,6 @@
 html,body{
 background-color: #006747;
-background: url("/static/image/monument.jpg");
+/*background: url("/static/image/monument.jpg");*/
 background-attachment: fixed;
 background-size: cover;
 height: 100%;

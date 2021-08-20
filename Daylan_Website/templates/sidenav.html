@@ -28,9 +28,15 @@
     </div>
     <div class="side-links">
     <a-link class="active" href="#home">Home</a-link>
-    <a-link href="#news">Resume</a-link>
-    <a-link href="#contact">About Me</a-link>
-    <a-link href="#about">Contact</a-link>
+    <a-link>
+        <a href="{% url 'resume' %}">Resume</a>
+    </a-link>
+    <a-link href="#contact">
+        <a href="{% url 'resume' %}">About Me</a>
+    </a-link>
+    <a-link href="#about">
+        <a href="{% url 'resume' %}">Contact</a>
+    </a-link>
     </div>
 </div>
   <!--Navbar Ends-->

@@ -5,3 +5,7 @@ from django.shortcuts import render
 def homepage(request):
     # messages.info(request, "Logged out successfully")  # Doesnt work will figure out
     return render(request, 'homepage.html')
+
+
+def resume(request):
+    return render(request, 'resume.html')

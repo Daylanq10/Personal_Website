@@ -6,38 +6,109 @@
 
 <header class="container">
   <h1>Daylan Quinn</h1>
-  <h2>Scroll Down to see Completed Works
+  <h1>Software Engineer</h1>
+  <h2>Scroll to get to know me
     <p class="animate-arrow">&darr;
     </p>
   </h2>
 </header>
 <section class="scroll-container">
-  <div class="scroll-element">
-hello
-  </div>
+  <div class="scroll-element js-scroll slide-left">
+    <div class="container text-box">
+      <p>
+        In the famous words of Obi Wan Kenobi, <font color="red">"Hello, there!"</font>.
+        <hr>
+        My name is Daylan Quinn and I am a recent Computer Science graduate from the University of Missouri - Kansas City.
+        I started my development as a programmer in 2019 when I changed my degree path from Mathematics to Computer
+        Science.
+        <hr>
+        Since an introductory class on Python, I have worked with a multitude of programming languages
+        including C++, Java, Ruby, JavaScript, and TypeScript.
+        I have also picked up a few skills along the way that include Object Oriented Programming,
+        Data Structures, Web Development, Artificial Intelligence, Relational Databases, and Automated Testing.
+        <hr>
+        To finish my bachelors degree I spent a few months as an intern with Cerner Corporation as a Software Engineer Intern
+        to begin my transition from academia into industry. In that position I learned new skills that have helped me better
+        myself as a software engineer in a team environment.
+      </p>
+
+    </div>
+    </div>
   <div class="scroll-caption">
-    This animation fades in.
+    <h3>About Me</h3>
   </div>
 </section>
 <section class="scroll-container">
-  <div class="scroll-element ">
+  <div class="scroll-element js-scroll slide-right">
+    <div class="container text-box">
+      <p>
+        In the famous words of Obi Wan Kenobi, <font color="red">"Hello, there!"</font>.
+        <hr>
+        My name is Daylan Quinn and I am a recent Computer Science graduate from the University of Missouri - Kansas City.
+        I started his development as a programmer in 2019 when I changed hmy degree path from mathematics to computer
+        science.
+        <hr>
+        Since an introductory class on Python, Daylan has worked with a multitude of programming languages
+        including C++, Java, Ruby, JavaScript, and TypeScript.
+        He also picked up a few skills along the way that include Object Oriented Programming,
+        Data Structures, Web Development, Artificial Intelligence, Relational Databases, and Automated Testing.
+        <hr>
+        For examples of what Daylan Quinn has done in his developing career, please scroll down.
+      </p>
 
+    </div>
   </div>
   <div class="scroll-caption">
-    This animation slides in to the top.
+    <h3>This animation slides in to the top.</h3>
   </div>
 </section>
 <section class="scroll-container">
-  <div class="scroll-element">
+  <div class="scroll-element js-scroll slide-left">
+    <div class="container text-box">
+      <p>
+        In the famous words of Obi Wan Kenobi, <font color="red">"Hello, there!"</font>.
+        <hr>
+        My name is Daylan Quinn and I am a recent Computer Science graduate from the University of Missouri - Kansas City.
+        I started my development as a programmer in 2019 when I changed my degree path from Mathematics to Computer
+        Science.
+        <hr>
+        Since an introductory class on Python, I have worked with a multitude of programming languages
+        including C++, Java, Ruby, JavaScript, and TypeScript.
+        I have also picked up a few skills along the way that include Object Oriented Programming,
+        Data Structures, Web Development, Artificial Intelligence, Relational Databases, and Automated Testing.
+        <hr>
+        To finish my bachelors degree I spent a few months as an intern with Cerner Corporation as a Software Engineer Intern
+        to begin my transition from academia into industry. In that position I learned new skills that have helped me better
+        myself as a software engineer in a team environment.
+      </p>
 
+    </div>
   </div>
   <div class="scroll-caption">
     This animation slides in from the left.
   </div>
 </section>
 <section class="scroll-container">
-  <div class="scroll-element">
+  <div class="scroll-element js-scroll slide-right">
+    <div class="container text-box">
+      <p>
+        In the famous words of Obi Wan Kenobi, <font color="red">"Hello, there!"</font>.
+        <hr>
+        My name is Daylan Quinn and I am a recent Computer Science graduate from the University of Missouri - Kansas City.
+        I started my development as a programmer in 2019 when I changed my degree path from Mathematics to Computer
+        Science.
+        <hr>
+        Since an introductory class on Python, I have worked with a multitude of programming languages
+        including C++, Java, Ruby, JavaScript, and TypeScript.
+        I have also picked up a few skills along the way that include Object Oriented Programming,
+        Data Structures, Web Development, Artificial Intelligence, Relational Databases, and Automated Testing.
+        <hr>
+        To finish my bachelors degree I spent a few months as an intern with Cerner Corporation as a Software Engineer Intern
+        to begin my transition from academia into industry. In that position I learned new skills that have helped me better
+        myself as a software engineer in a team environment.
+      </p>
 
+    </div>
   </div>
   <div class="scroll-caption">
     This animation slides in from the right.
@@ -45,11 +116,72 @@ hello
 </section>
 
 <footer>
-  <p>Website Created by Daylan Quinn</p>
+  <p>Daylan Quinn</p>
   <p>
     07/2021
   </p>
 </footer>
+
+<script type="text/javascript">
+
+const scrollElements = document.querySelectorAll(".js-scroll");
+
+var throttleTimer;
+
+const throttle = (callback, time) => {
+  if (throttleTimer) return;
+
+  throttleTimer = true;
+  setTimeout(() => {
+    callback();
+    throttleTimer = false;
+  }, time);
+}
+
+const elementInView = (el, dividend = 1) => {
+  const elementTop = el.getBoundingClientRect().top;
+
+  return (
+    elementTop <=
+    (window.innerHeight || document.documentElement.clientHeight) / dividend
+  );
+};
+
+const elementOutofView = (el) => {
+  const elementTop = el.getBoundingClientRect().top;
+
+  return (
+    elementTop > (window.innerHeight || document.documentElement.clientHeight)
+  );
+};
+
+const displayScrollElement = (element) => {
+  element.classList.add("scrolled");
+};
+
+const hideScrollElement = (element) => {
+  element.classList.remove("scrolled");
+};
+
+const handleScrollAnimation = () => {
+  scrollElements.forEach((el) => {
+    if (elementInView(el, 1.25)) {
+      displayScrollElement(el);
+    } else if (elementOutofView(el)) {
+      hideScrollElement(el)
+    }
+  })
+}
+var timer=0;
+var scroll = 0;
+
+window.addEventListener("scroll", () => {
+  throttle(() => {
+    handleScrollAnimation();
+  }, 250);
+});
+
+</script>
 
 
 {% endblock %}
